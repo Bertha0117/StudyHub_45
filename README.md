@@ -14,3 +14,11 @@ This project is under development.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🎯 冲突演示 - 主分支  
+这个内容来自 **main** 分支，用于演示Git冲突解决。
+
+**计划功能：**
+- 笔记标签系统
+- 智能搜索功能
+- 数据备份服务
