@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记管理 - StudyHub_45</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background: #545b62;
+        }
+        .note-form {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .note-form input, .note-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .note-form button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .note-form button:hover {
+            background: #218838;
+        }
+        .notes-list {
+            margin-top: 30px;
+        }
+        .note-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            border-left: 4px solid #007acc;
+        }
+        .note-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .note-content {
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回首页</a>
+        <h1>📝 我的笔记</h1>
+        <p>在这里管理你的学习笔记和想法。</p>
+
+        <!-- 添加笔记的表单 -->
+        <div class="note-form">
+            <h3>添加新笔记</h3>
+            <form id="noteForm">
+                <input type="text" id="noteTitle" placeholder="输入笔记标题..." required>
+                <textarea id="noteContent" rows="4" placeholder="输入笔记内容..." required></textarea>
+                <button type="submit">保存笔记</button>
+            </form>
+        </div>
+
+        <!-- 笔记列表 -->
+        <div class="notes-list">
+            <h3>我的笔记列表</h3>
+            <div class="note-item">
+                <div class="note-title">Git 分支管理学习笔记</div>
+                <div class="note-content">Git 分支管理是团队协作的核心。主要命令：git branch, git checkout, git merge。解决冲突时要仔细检查代码差异。</div>
+            </div>
+            <div class="note-item">
+                <div class="note-title">HTML/CSS 最佳实践</div>
+                <div class="note-content">1. 语义化HTML标签 2. CSS选择器优先级 3. 响应式设计原则 4. Flexbox布局技巧</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 15px; background: #e7f3ff; border-radius: 5px;">
+            <p><strong>提示：</strong>这是笔记模块的初始版本。后续可以添加编辑、删除和搜索功能。</p>
+        </div>
+    </div>
+
+    <script>
+        // 简单的笔记管理功能
+        document.getElementById('noteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('noteTitle').value;
+            const content = document.getElementById('noteContent').value;
+            
+            if (title && content) {
+                alert(`笔记"${title}"已保存！\n\n在实际版本中，这里会将数据保存到数据库。`);
+                document.getElementById('noteForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
